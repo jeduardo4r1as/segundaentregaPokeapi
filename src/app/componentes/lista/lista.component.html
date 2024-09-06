@@ -1,0 +1,31 @@
+
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1920px-International_Pok%C3%A9mon_logo.svg.png">
+
+
+
+  @for(item of pokemonesCompleto; track item.id){
+    <div class="container" style="display:inline-block;">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{item.name}}</mat-card-title>
+        <mat-card-subtitle>Puesto en pokedex:{{item.order}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="item.sprites.front_default" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <ul>
+          <li>altura ft:{{item.height}}</li>
+          <li>peso lb:{{item.weight}}</li>
+          <li>experiencia base:{{item.base_experience}}</li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="playSound(item.cries.latest)">Sonido</button>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+    }
+
+
+
